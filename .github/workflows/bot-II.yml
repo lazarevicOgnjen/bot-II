@@ -48,7 +48,7 @@ jobs:
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python bp-main.py
+        run: python bp/bp-main.py
 
       # Step 7: Commit changes to novosti.md
       - name: Commit changes
@@ -63,21 +63,21 @@ jobs:
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python bp-photo.py
+        run: python bp/bp-photo.py
 
       # Step 9: Notify via Discord bot
       - name: Discord bot notification
         if: steps.auto-commit-action-bp.outputs.changes_detected == 'true'
         env:
           WEBHOOK_MAIN: ${{ secrets.WEBHOOK_BP }}
-        run: python bp-discord.py
+        run: python bp/bp-discord.py
 
       # Step 10: Run scraping script
       - name: Run main script
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python lp-main.py
+        run: python lp/lp-main.py
 
       # Step 11: Commit changes to novosti.md
       - name: Commit changes
@@ -92,21 +92,21 @@ jobs:
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python lp-photo.py
+        run: python lp/lp-photo.py
 
       # Step 13: Notify via Discord bot
       - name: Discord bot notification
         if: steps.auto-commit-action-lp.outputs.changes_detected == 'true'
         env:
           WEBHOOK_MAIN: ${{ secrets.WEBHOOK_LP }}
-        run: python lp-discord.py
+        run: python lp/lp-discord.py
 
       # Step 14: Run scraping script
       - name: Run main script
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python oop-main.py
+        run: python oop/oop-main.py
 
       # Step 15: Commit changes to novosti.md
       - name: Commit changes
@@ -121,21 +121,21 @@ jobs:
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python oop-photo.py
+        run: python oop/oop-photo.py
 
       # Step 17: Notify via Discord bot
       - name: Discord bot notification
         if: steps.auto-commit-action-oop.outputs.changes_detected == 'true'
         env:
           WEBHOOK_MAIN: ${{ secrets.WEBHOOK_OOP }}
-        run: python oop-discord.py
+        run: python oop/oop-discord.py
 
       # Step 18: Run scraping script
       - name: Run main script
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python pj-main.py
+        run: python pj/pj-main.py
 
       # Step 19: Commit changes to novosti.md
       - name: Commit changes
@@ -150,21 +150,21 @@ jobs:
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python pj-photo.py
+        run: python pj/pj-photo.py
 
       # Step 21: Notify via Discord bot
       - name: Discord bot notification
         if: steps.auto-commit-action-pj.outputs.changes_detected == 'true'
         env:
           WEBHOOK_MAIN: ${{ secrets.WEBHOOK_PJ }}
-        run: python pj-discord.py
+        run: python pj/pj-discord.py
 
       # Step 22: Run scraping script
       - name: Run main script
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python sp-main.py
+        run: python sp/sp-main.py
 
       # Step 23: Commit changes to novosti.md
       - name: Commit changes
@@ -179,21 +179,21 @@ jobs:
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python sp-photo.py
+        run: python sp/sp-photo.py
 
       # Step 25: Notify via Discord bot
       - name: Discord bot notification
         if: steps.auto-commit-action-sp.outputs.changes_detected == 'true'
         env:
           WEBHOOK_MAIN: ${{ secrets.WEBHOOK_SP }}
-        run: python sp-discord.py
+        run: python sp/sp-discord.py
 
       # Step 26: Run scraping script
       - name: Run main script
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python aor1-main.py
+        run: python aor1/aor1-main.py
 
       # Step 27: Commit changes to novosti.md
       - name: Commit changes
@@ -208,21 +208,21 @@ jobs:
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python aor1-photo.py
+        run: python aor1/aor1-photo.py
 
       # Step 29: Notify via Discord bot
       - name: Discord bot notification
         if: steps.auto-commit-action-aor1.outputs.changes_detected == 'true'
         env:
           WEBHOOK_MAIN: ${{ secrets.WEBHOOK_AOR1 }}
-        run: python aor1-discord.py
+        run: python aor1/aor1-discord.py
 
       # Step 30: Run scraping script
       - name: Run main script
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python dmat-main.py
+        run: python dmat/dmat-main.py
 
       # Step 31: Commit changes to novosti.md
       - name: Commit changes
@@ -237,14 +237,14 @@ jobs:
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python dmat-photo.py
+        run: python dmat/dmat-photo.py
 
       # Step 33: Notify via Discord bot
       - name: Discord bot notification
         if: steps.auto-commit-action-dmat.outputs.changes_detected == 'true'
         env:
           WEBHOOK_MAIN: ${{ secrets.WEBHOOK_DMAT }}
-        run: python dmat-discord.py
+        run: python dmat/dmat-discord.py
 
 
       # Step 34: Run scraping script
@@ -252,7 +252,7 @@ jobs:
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python oopj-main.py
+        run: python oopj/oopj-main.py
 
       # Step 35: Commit changes to novosti.md
       - name: Commit changes
@@ -267,11 +267,11 @@ jobs:
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
-        run: python oopj-photo.py
+        run: python oopj/oopj-photo.py
 
       # Step 37: Notify via Discord bot
       - name: Discord bot notification
         if: steps.auto-commit-action-oopj.outputs.changes_detected == 'true'
         env:
           WEBHOOK_MAIN: ${{ secrets.WEBHOOK_OOPJ }}
-        run: python oopj-discord.py
+        run: python oopj/oopj-discord.py
