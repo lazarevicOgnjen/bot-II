@@ -51,7 +51,7 @@ try:
     responseT = page_to_scrape.find_element(By.XPATH, '//*[@id="region-main"]')
     novosti_markdown = responseT.text
 
-    with open("novosti.md", "w") as novosti_file:
+    with open("lp.md", "w") as novosti_file:
         novosti_file.write(novosti_markdown)
 
 finally:
